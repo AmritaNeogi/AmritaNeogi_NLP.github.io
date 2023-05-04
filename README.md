@@ -23,3 +23,7 @@ Acknowledgements
 Data was obtained by scrapping individual resume examples from www.livecareer.com website. 
 Web Scrapping code is taken from [GitHub Repo](https://github.com/Sbhawal/resumeScraper).
 
+Jobzilla skill patterns
+
+The jobzilla skill dataset is jsonl file containing different skills that can be used to create spaCy entity_ruler. The data set contains label and pattern-> diferent words used to descibe skills in various resume.
+
