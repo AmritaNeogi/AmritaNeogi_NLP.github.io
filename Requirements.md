@@ -1,24 +1,24 @@
 The following are the list of libraries required for this project:
 
-#Data loading/ Data manipulation
-import pandas as pd
-import numpy as np
+#Data loading/ Data manipulation <br>
+import pandas as pd  <br>
+import numpy as np  <br>
 
-#spacy
-import spacy
-from spacy.pipeline import EntityRuler
-from spacy.lang.en import English
-from spacy.tokens import Doc
-
-
- #nltk
-import re
-import nltk
-from nltk.corpus import stopwords
-from nltk.stem import WordNetLemmatizer
+#spacy  <br>
+import spacy  <br>
+from spacy.pipeline import EntityRuler  <br>
+from spacy.lang.en import English    <br>
+from spacy.tokens import Doc     <br>
 
 
-#visualize
-import plotly.express as px
-import matplotlib.pyplot as plt
-from spacy import displacy
+#nltk  <br>
+import re  <br>
+import nltk  <br>
+from nltk.corpus import stopwords  <br>
+from nltk.stem import WordNetLemmatizer  <br>
+
+
+#visualize  <br>
+import plotly.express as px  <br>
+import matplotlib.pyplot as plt  <br>
+from spacy import displacy  <br>
