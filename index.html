@@ -17,11 +17,11 @@
             <span class="ml-3 text-xl">Resume Screening</span>
           </a>
           <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">            
-            <a herf = "/" class="mr-5 hover:text-gray-900">spaCy</a>
-            <a herf = "/" class="mr-5 hover:text-gray-900">NER</a>
+            <a herf = "/" class="mr-5 hover:text-gray-900"><a href="SpaCy.html "> spaCy </a></a>
+            <a herf = "/" class="mr-5 hover:text-gray-900"> <a href="NER.html"> NER </a></a>
             
           </nav>
-          <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">View On GitHub
+          <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"><a href="https://github.com/AmritaNeogi/AmritaNeogi.github.io">View On GitHub</a>
             <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
               <path d="M5 12h14M12 5l7 7-7 7"></path>
             </svg>
@@ -36,12 +36,238 @@
       <div class="text-center lg:w-2/3 w-full">
         <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">WELCOME!!</h1>
         <h2 class="title-font sm:text-4xl text-3xl mb-4 font-small text-gray-900">Named Entity Recognition (NER) for Resume Screening using spaCy</h2>
-        <p class="mb-8 leading-relaxed">This is a comprehensive tutorial on how to perform Named Entity Recognition (NER) for resume screening using SpaCy. In this tutorial, you'll learn how to use spaCy to screen resumes by identifying and categorizing named entities such as name, email address, phone number, education, and work experience. You'll get step-by-step instructions, examples, and tips on customizing the NER model to your specific use case. By following this tutorial, you'll be able to streamline your recruitment and hiring process by quickly and accurately extracting valuable information from resumes. The power of spaCy will be at your fingertips, enabling you to make better hiring decisions and save time in the process.</p>
+        <p class="mb-8 leading-relaxed">
+          This is a comprehensive tutorial on how to use SpaCy for Named Entity Recognition (NER) to determine the chances of getting hired in a particular company based on your skillset.
+          In this tutorial, you'll learn how to use spaCy to identify and categorize named entities such as name, email address, phone number, education, and work experience.
+          Step-by-step instructions, examples, and tips will be provided on customizing the NER model to your specific use case.
+          By following this tutorial, you'll be able to streamline your job search process by quickly and accurately extracting valuable information from job descriptions and company websites.
+          The power of SpaCy will be at your fingertips, enabling you to make better career decisions and save time in the process.</p>
         <div class="flex justify-center">
-          <button class="inline-flex text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg">Code</button>
-          <button class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg"><a href="https://www.youtube.com/watch?v=gOioxltfh48">Dataset</a></button>
+          <button class="inline-flex text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg"><a href ="https://github.com/AmritaNeogi/AmritaNeogi.github.io/blob/main/NER/Resume%20Screening.ipynb">Code</a></button>
+          <!-- <button class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg"><a href="https://www.youtube.com/watch?v=gOioxltfh48">Dataset</a></button> -->
         </div>
       </div>
     </div>
   </section>
+
+<section>
+  <!-- <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px;"><b> What is spaCy?</b></p> -->
+  <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px; font-size: 20px;"><b>INTRODUCTION</b></p>
+    <p class="mb-0 leading-relaxed text-left" style="margin-left: 20px;">In this tutorial, we will explore the use of spacy for entity recognition in analyzing 200 resumes and experiment with various NLP tools for text analysis. Our primary objective is to assist recruiters in quickly reviewing a large number of applications. We have also included a skill matching feature to help hiring managers evaluate whether candidates should proceed to the interview stage. To achieve this, we will use two datasets: one with resume texts and the other containing skills to create an entity ruler. By the end of this tutorial, you'll have gained practical experience in using spacy for entity recognition and employing NLP tools for text analysis.<br> <br></p>
+</section>
+
+
+<section>    
+    <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px; font-size: 20px;"><b>APPROACH</b></p>
+    <p class="mb-0 leading-relaxed text-left" style="margin-left: 20px;">Firstly, we will load the spaCy model, <a href="https://www.kaggle.com/datasets/snehaanbhawal/resume-dataset" style="color:blue; text-decoration:underline;">Resume Dataset</a>, and <a href="https://github.com/kingabzpro/jobzilla_ai/blob/main/jz_skill_patterns.jsonl" style="color:blue; text-decoration:underline;">Jobzilla skills</a> dataset directly into the entity ruler.
+      We will then randomized Job categories so that 200 samples contain various job categories instead of one. <br>
+      In this tutorial, we will limit our number of samples to 200 as processing 2400+ takes time.<br>
+      </p>
+
+      <pre><code class="python">
+         df = pd.read_csv("Resume.csv")
+         df = df.reindex(np.random.permutation(df.index))
+         data = df.copy().iloc[0:200,]         
+        </code></pre>
+
+        <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px;"><b> Loading spaCy model</b></p>
+        <p class="mb-0 leading-relaxed text-left" style="margin-left: 20px;">You can download spaCy model using python -m spacy en_core_web_lg. Then load spacy model into nlp.</p> 
+        
+        <pre><code class="python">
+         nlp = spacy.load("en_core_web_lg")
+         skill_pattern_path = "jz_skill_patterns.jsonl"
+      </code></pre>
+
+      <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px;"><b>Entity Ruler</b></p>
+    <p class="mb-3 leading-relaxed text-left" style="margin-left: 20px;">
+      We will then create an entity ruler, for which we need to add a pipeline and then load the .jsonl file containing skills into ruler. <br>
+      Entity ruler helps us add additional rules to highlight various categories within the text, such as skills and job description in our case.<br>
+      <pre><code class="python">
+         ruler = nlp.add_pipe("entity_ruler")
+         ruler.from_disk(skill_pattern_path)
+         nlp.pipe_names
+      </code></pre> 
+       </p>
+
+    <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px;"><b>Skills</b></p>   
+    <p class="mb-2 leading-relaxed text-left" style="margin-left: 20px;">Next, we will develop a pair of Python functions to extract all the skills from a given resume and generate an array that includes all of them. Following this, we will utilize these functions on our dataset to produce a new feature named "skill," which will aid us in identifying patterns and trends in the data.<br></p>
+    <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px;">The first function, "get_skills," will retrieve the abilities from a single text, while the second, "unique_skills," will eliminate any duplicates.<br></p>
+    <pre><code class="python">
+         def get_skills(text):
+             doc = nlp(text)
+             myset = []
+             subset = []
+             for ent in doc.ents:
+                 if ent.label_ == "SKILL":
+                    subset.append(ent.text)
+             myset.append(subset)
+             return subset
+
+
+         def unique_skills(x):
+             return list(set(x))
+
+
+      </code></pre>
+      <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px;"><b> Data Cleaning and Preperation  </b></p>
+      <p class="mb-2 leading-relaxed text-left" style="margin-left: 20px;">Next step is Resume data cleaning and processing. For this we need the following NLTK (Natural Language Toolkit) resources:<br></p>
+      <pre><code class="python">
+            nltk.download(['stopwords','wordnet'])
+            nltk.download('omw-1.4')      
+   
+        </code></pre>
+      <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px;"><b>stopwords</b>: This resource contains a list of common stop words (words that are frequently occurring and do not carry any meaning, e.g. "the", "and", "is", "a") that are used to remove noise from text data during text preprocessing.<br>
+        <b>wordnet</b>: This resource is a large English lexical database of words that is used for tasks such as word sense disambiguation, synonymy, and hyponymy.<br>
+        <b>omw-1.4</b>: This is an Open Multilingual WordNet resource that provides synsets (groups of synonyms) in multiple languages.<br></p>
+  
+  
+      <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px;">We will utilize regular expressions to eliminate hyperlinks, special characters, and punctuations from the text. The text will be converted to lowercase. 
+        The text will be split into an array based on space.
+        The text will be lemmatized to its base form for normalization. 
+        English stopwords will be eliminated. The results will be added to an array.
+        </p>  
+      
+      <pre><code class="python">
+        clean = []
+        for i in range(data.shape[0]):
+            review = re.sub('(@[A-Za-z0-9]+)|([^0-9A-Za-z \t])|(\w+:\/\/\S+)|^rt|http.+?"'," ",data["Resume_str"].iloc[i],)
+            review = review.lower()
+            review = review.split()
+            lm = WordNetLemmatizer()
+        review = [
+            lm.lemmatize(word)
+            for word in review
+            if not word in set(stopwords.words("english"))
+        ]  
+        review = " ".join(review)
+        clean.append(review)
+     </code></pre>
+    
+  
+    <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px;">Once we are done cleaning the data, we will apply all the functions we have created previously.
+      We will create 'skills' columns, lowering text, and applying the get_skills () function.</p>  
+    <pre><code class="python">
+          data["Clean_Resume"] = clean
+          data["skills"] = data["Clean_Resume"].str.lower().apply(get_skills)
+          data["skills"] = data["skills"].apply(unique_skills)
+          
+     </code></pre>
+
+     <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px;"><b>Job Distribution </b></p>
+     <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px;">Our random 200 samples contain a variety of job categories. Accountants, Business development, and Advocates are the top categories.</p>
+     <img src="https://raw.githubusercontent.com/john/my-website/main/images/my-image.jpg">
+     <!-- newplot -->
+     <img src="https://raw.githubusercontent.com/john/my-website/main/images/my-image.jpg">
+     <!-- newplot2 -->
+     <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px;">As we can observe CONSTRUCTION job category's skills distributions.<br>
+      Therefore, the top Skills required for CONSTRUCTION job are: <br>
+      Material<br>
+      Business<br>
+      Scheduke<br>
+      Project Management<br>
+      Design<br>      
+      So anybody looking to improve their chance of getting hired by a construction company should focus on the above mentioned skills.</p>
+
+
+     <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px;"><b>Entity Recognition</b></p>
+     <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px;">We can also display various entities within our raw text by using spaCy displacy.render. <br>
+      It is an amazing way to look at your entire document and discover SKILL or GEP within your Resume.<br>
+      <pre><code class="python">
+        sent = nlp(data["Resume_str"].iloc[0])
+        displacy.render(sent, style="ent", jupyter=True)
+      </code></pre>    
+    </p>
+      
+
+     <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px;"><b>Dependency Parsing </b></p>
+     <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px;">We can also visualize dependencies by just changing style to dep as shown below. We have also limited words to 10 which includes space too.
+      Limiting the words will make it visualize the small chunk of data and if you want to see the dependency, you can remove the filter.
+      
+      <pre><code class="python">
+        displacy.render(sent[0:10], style="dep", jupyter=True, options={"distance": 90})
+      </code></pre>
+      <img src="https://raw.githubusercontent.com/john/my-website/main/images/my-image.jpg">
+      <!-- DepParsing -->
+    </p>
+
+
+     <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px;"><b>Custom Entity Recognition</b></p>
+     <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px;">We finally customize entity recognition. We added a new entity called 'SKILL'. We will will also add custom colours to all categories and gradient colors to SKILL and Job-Category.
+      <pre><code class="python">
+        patterns = df.Category.unique()
+        for a in patterns:
+            ruler.add_patterns([{"label": "Job-Category", "pattern": a}])
+
+
+            colors = {
+              "Job-Category": "linear-gradient(90deg, #aa9cfc, #fc9ce7)",
+              "SKILL": "linear-gradient(90deg, #9BE15D, #00E3AE)",
+              "ORG": "#ffd966",
+              "PERSON": "#e06666",
+              "GPE": "#9fc5e8",
+              "DATE": "#c27ba0",
+              "ORDINAL": "#674ea7",
+              "PRODUCT": "#f9cb9c",
+          }
+          options = {
+              "ents": [
+                  "Job-Category",
+                  "SKILL",
+                  "ORG",
+                  "PERSON",
+                  "GPE",
+                  "DATE",
+                  "ORDINAL",
+                  "PRODUCT",
+              ],
+              "colors": colors,
+          }
+          sent = nlp(data["Resume_str"].iloc[5])
+          displacy.render(sent, style="ent", jupyter=True, options=options)
+              
+      </code></pre>   
+      <img src="https://raw.githubusercontent.com/john/my-website/main/images/my-image.jpg">
+      <!-- CustomEntity-->
+     </p>
+     
+
+
+     <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px;"><b>Resume Analysis</b></p>
+     <p class="mb-5 leading-relaxed text-left" style="margin-left: 20px;">
+      We can finally allow users to copy paste their resumes and see their results. <br>
+      We are using a random resume here in text format and our model successfully highlights all the skills.
+      <pre><code class="python">  
+        # taking example of a random resume 
+          input_resume= resume.txt
+          sent2 = nlp(input_resume)
+          displacy.render(sent2, style="ent", jupyter=True, options=options)
+          <img src="https://raw.githubusercontent.com/john/my-website/main/images/my-image.jpg">
+          <!-- resAnalysis-->
+         </p>  
+      </code></pre>
+      <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px;">With this model, you can determine the degree to which it aligns with job requirements and obtain an accuracy score.</p>
+  </section>
+
+
+  <section>
+    <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px; font-size: 20px;"><b>CONCLUSION</b></p>
+    
+    <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px; font-size: 20px;">In this tutorial, we have learnt how to use entity ruler to create additional entities and then displayed them using custom colors. 
+      We have also visualized categories and skills distributions and allowed the user to add resumes directly which includes skills match percentage. <br>
+      I hope you had a good learning experience.<br>
+    </p>
+  </section>
+
+  <section>
+    <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px; font-size: 15px;"><b>References:</b></p>
+    
+    <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px; font-size: 20px;">
+      <a href="https://link.springer.com/chapter/10.1007/978-3-642-45358-8_7">Named Entity Recognition</a><br>
+      <a href="https://github.com/laxmimerit/CV-Parsing-using-Spacy-3">Resume-and-CV-Summarization-and-Parsing-with-Spacy-in-Python</a><br>
+      <a href="https://deepnote.com/@isaac-aderogba/Spacy-Food-Entities-2cc2d19c-c3ac-4321-8853-0bcf2ef565b3">Spacy Food Entities (deepnote.com)</a><br>
+      <a href="https://deepnote.com/@abid/spaCy-Resume-Analysis-81ba1e4b-7fa8-45fe-ac7a-0b7bf3da7826">Resume_Analysis</a><br>
+      <a href="https://www.cfilt.iitb.ac.in/resources/surveys/rahul-ner-survey.pdf">Named Entity Recognition: A Literature Survey</a><br>
+    </p>
+  </section>
+  
 </html>

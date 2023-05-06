@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <title>spaCy</title>
+</head>
+<body>
+    <header class="text-gray-600 body-font">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+          <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-green-500 rounded-full" viewBox="0 0 24 24">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg>
+            <span class="ml-3 text-xl">spaCy</span>
+          </a>
+          <!-- <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">            
+            <a herf = "/" class="mr-5 hover:text-gray-900">spaCy</a>
+            <a herf = "/" class="mr-5 hover:text-gray-900">NER</a>            
+          </nav> -->
+          <!-- <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"><a href="index.html">Go Back</a> -->
+            <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0 ml-auto"><a href="index.html">Go Back</a></button>
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+      </header>
+
+</body>
+<section class="text-gray-600 body-font">
+    
+    <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px;"><b> What is spaCy?</b></p>
+    <p class="mb-0 leading-relaxed text-left" style="margin-left: 20px;">spaCy is a popular and powerful open-source library for Natural Language Processing (NLP) in Python. It is designed specifically to be fast, efficient, and easy to use, making it a great choice for a wide range of NLP tasks, including text classification, named entity recognition, and parsing.</p>
+    <p class="mb-0 leading-relaxed text-left" style="margin-left: 20px;">One of the key benefits of spaCy is its pre-trained models, which can be easily downloaded and used to perform a variety of NLP tasks out of the box. These models have been trained on large amounts of text data and are constantly being updated and improved to provide even better performance.</p>
+    <p class="mb-10 leading-relaxed text-left" style="margin-left: 20px;">In addition to its pre-trained models, spaCy also offers a range of built-in features for working with text data, including tokenization, part-of-speech tagging, dependency parsing, and more. These features are designed to be both powerful and easy to use, allowing you to quickly and efficiently process and analyze text data in Python. <br>
+        Overall, if you're looking for a powerful and easy-to-use NLP library in Python, spaCy is definitely worth checking out!
+       </p>
+    <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px;"><b>What spaCy is NOT?</b></p>
+    <p class="mb-10 leading-relaxed text-left" style="margin-left: 20px;">1. SpaCy is different from a platform or API because it does not provide software as a service or web applications. Instead, it is an open-source library that assists in building NLP applications. <br>
+       2. While SpaCy can power conversational applications, it is not specifically designed for chatbot use and only offers underlying text processing capabilities.<br>
+       3. Although built on the latest research, SpaCy is not research software. It is focused on getting tasks accomplished, resulting in different design choices than platforms like NLTK or CoreNLP. SpaCy is integrated and opinionated, avoiding multiple algorithm choices that offer the same functionality to improve performance and developer experience.<br>
+       4. SpaCy is an open-source library and not a company. The software is published by Explosion AI, which is the company responsible for releasing SpaCy and other programs.<br>
+    </p>
+    
+
+    <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px;"><b>Installation</b></p>
+    
+    <p class="mb-10 leading-relaxed text-left" style="margin-left: 20px;">You can install SpaCy, along with its data and models, effortlessly by using Python Package Index and Setup tools. To install SpaCy on your machine, simply enter the following command:
+        <pre>
+             !pip install -U spacy                 
+            
+        </pre>
+    </p>
+
+    <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px;"><b>Statistical Models</b></p>
+    <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px;">SpaCy has a mix of independent and model-dependent features. Loading statistical models allows SpaCy to predict linguistic annotations, such as identifying if a word is a verb or a noun. SpaCy provides statistical models for different languages that can be installed as separate Python modules. These models vary in size, speed, memory usage, accuracy, and the data they contain. The choice of the model to use depends on your specific use case and the text you're analyzing. For a general-purpose use case, the small, default models are always a good start. They typically include the following components: <br>
+        <br>
+        <b>Binary weights </b> for the part-of-speech tagger, dependency parser and named entity recognizer to predict those annotations in context.<br>
+        <b>Lexical entries </b> in the vocabulary, i.e. words and their context-independent attributes like the shape or spelling.<br>
+        <b>Data files</b> like lemmatization rules and lookup tables.<br>
+        <b>Word vectors </b>, i.e. multi-dimensional meaning representations of words that let you determine how similar they are to each other.<br>
+        <b>Configuration</b> options, like the language and processing pipeline settings, to put spaCy in the correct state when you load in the model.<br></p>
+
+
+     <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px;">These models are the power engines of spaCy. These models enable spaCy to perform several NLP related tasks, such as part-of-speech tagging, named entity recognition, and dependency parsing.</p>  
+     <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px;">I have listed below the different statistical models in spaCy along with their specifications: <br>
+
+        <b>en_core_web_sm</b>: English multi-task CNN trained on OntoNotes. Size – 11 MB  <br>
+        
+        <b>en_core_web_md</b>: English multi-task CNN trained on OntoNotes, with GloVe vectors trained on Common Crawl. Size – 91 MB  <br>
+        
+        <b>en_core_web_lg</b>: English multi-task CNN trained on OntoNotes, with GloVe vectors trained on Common Crawl. Size – 789 MB   <br></p> 
+    
+        <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px;">Importing these models into your project is a straightforward process. All you have to do is execute the spacy.load('model_name') command, as illustrated below:<br>
+        <pre>
+             !python -m spacy download en_core_web_lg
+            
+             !python -m spacy download en_core_web_sm
+
+             import spacy
+             nlp = spacy.load('en_core_web_sm')
+            
+        </pre>
+    </p>
+
+    <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px;"><b>Other Administrativa:<br></b>
+        spaCy is an open-source software library that is published under the MIT License.<br>
+        The tutorial uses spaCy 3.1.2 which can be found <a href="https://spacy.io/usage/spacy-101#whats-spacy" style="color:blue; text-decoration:underline;">here</a>.
+    </p>
+
+        </html>

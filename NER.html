@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <title>NER</title>
+</head>
+<body>
+    <header class="text-gray-600 body-font">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+          <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-green-500 rounded-full" viewBox="0 0 24 24">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg>
+            <span class="ml-3 text-xl">NER - Name Entity Recognition</span> 
+            <!-- <span class="mr-3 text-xl">NER - Name Entity Recognition</span> -->
+          </a>
+          <!-- <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">            
+            <a herf = "/" class="mr-5 hover:text-gray-900">spaCy</a>
+            <a herf = "/" class="mr-5 hover:text-gray-900">NER</a>            
+          </nav> -->
+          <!-- <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"><a href="index.html">Go Back</a> -->
+          <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0 ml-auto"><a href="index.html">Go Back</a></button>
+
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+      </header>
+
+</body>
+<section class="text-gray-600 body-font">
+    
+    <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px;"><b>Named Entity Recognition (NER) is a natural language processing (NLP) technique that involves identifying and extracting entities of interest from unstructured text. These entities can include people's names, locations, organizations, dates, times, and more.</b></p>
+    <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px;">The process of NER involves breaking down a piece of text into smaller units called tokens and then analyzing these tokens to determine whether they represent an entity. This is typically done using machine learning algorithms that are trained on large amounts of annotated text data.</p>
+    <p class="mb-10 leading-relaxed text-left" style="margin-left: 20px;">NER can be appllied in many real-world situations when analyzing a large quantity of text is helpful. Some examples of NER includes: <br>
+        - Improve customer support by categorizing and filtering user requests, complaints, and questions. It can help businesses obtain insights about their customers. <br>
+        - Help categorize applicants’ CVs and speed up the process.<br>
+        - Improve search and recommendation engines using recognized entities.<br>
+        - Search and extract useful information from documents and blog posts. <br>
+       </p>
+    <p class="mb-10 leading-relaxed text-left" style="margin-left: 20px;">In order to comprehend the Named Entity Recognition (NER) process in Natural Language Processing (NLP), it would be beneficial to begin by grasping the definition of a Named Entity.</p>
+    <p class="mb-10 leading-relaxed text-left" style="margin-left: 20px;"><b> Named Entity </b></p>
+    
+    <p class="mb-10 leading-relaxed text-left" style="margin-left: 20px;">Named entities are proper nouns that refer to specific entities that can be a person, organization, location, date, etc. Consider this example – “Mount Everest is the tallest mountain”. 
+        Here Mount Everest is a named entity of type location as it refers to a specific entity.</p>
+        <style>
+            table {
+              border-collapse: collapse;
+            }
+            td {
+              padding: 0 10px;
+            }
+          </style>
+        <table class="mb-10 leading-relaxed text-left" style="margin-left: 20px;">
+            <tr>
+              <th> </th>
+              <th><b>&nbsp; Named Entity</b></th>
+              <th><b>&nbsp; Examples</b></th>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>ORGANIZATION</td>
+              <td>SEI, BCCI, Pakistan Cricket Board</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>PERSON</td>
+              <td>Barack Obama, Narendra Modi, Kohli</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>MONEY</td>
+              <td>7 million dollars, INR 7 Crore</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>GPE</td>
+              <td>India, Australia, South East Asia</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>LOCATION</td>
+              <td>Mount Everest, River Nile</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>DATE</td>
+              <td>8th June 1998, 7 April</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>TIME</td>
+              <td>8:45 A.M., two-fifty am</td>
+            </tr>
+          </table>
+          
+    <p class="mb-10 leading-relaxed text-left" style="margin-left: 20px;"><b> Named Entity Recognition </b></p>
+    
+    <p class="mb-10 leading-relaxed text-left" style="margin-left: 20px;">Named Entity Recognition (NER) is a technique used in information retrieval and natural language processing to extract named entities from text. <br>This process involves two steps: <br>The first step is to perform Part of Speech (POS) tagging on the text. <br> The second step involves using the information from the POS tagging to identify and extract the named entities from the text.</p>          
+    
+    
+    <!-- <figure>
+        <img src= "C:/Users/amrit/OneDrive/Documents/GitHub/AmritaNeogi.github.io/NER/image ner.jpg" alt="Description of image" width="400" height="300">
+        <figcaption>Caption for the image.</figcaption>
+      </figure> -->
+
+    <p class="mb-5 leading-relaxed text-left" style="margin-left: 20px;"><b>Ambiguity in Named Entity</b></p>      
+    <p class="mb-5 leading-relaxed text-left" style="margin-left: 20px;">Although the category of a term may be clear for a person, there can be ambiguity in classification when it comes to computers. Let's examine a few examples of such ambiguity:<br></p>    
+    <p class="mb-5 leading-relaxed text-left" style="margin-left: 20px;">1.&nbsp; The phrase "England won the 2019 world cup" could refer to the Organisation named England or the Location of England where the event took place.<br></p>   
+    <p class="mb-5 leading-relaxed text-left" style="margin-left: 20px;">2. &nbsp;Similarly, the phrase "Washington is the capital of the US" could refer to the Location named Washington or the Person who was the first president of the US and also named Washington.<br></p> 
+    
+
+    <p class="mb-5 leading-relaxed text-left" style="margin-left: 20px;"><b>Methods of NER</b></p> 
+    <p class="mb-5 leading-relaxed text-left" style="margin-left: 20px;">1.&nbsp; A potential approach is to utilize various machine learning algorithms to train the model for multi-classification. However, this method necessitates extensive labelling efforts. Furthermore, due to the ambiguity present in sentences, the model must possess a profound contextual comprehension to tackle this issue. This, in turn, makes it an arduous task for a basic machine learning algorithm.<br></p> 
+    <p class="mb-5 leading-relaxed text-left" style="margin-left: 20px;">2. &nbsp;An alternative method is to utilize Conditional Random Field (CRF) implemented by NLP Speech Tagger and NLTK. This is a probabilistic model that is effective in modeling sequential data such as words. CRF is able to capture a profound understanding of the sentence's context. In this model, the input <br></p>
+    <p class="mb-5 leading-relaxed text-left" style="margin-left: 20px;">X = {<span style="text-decoration: underline; position: relative;"><span>x<sub>1</sub></span><span style="position: absolute; top: -0.5em; right: -0.5em;">&#8594;</span></span>,
+        <span style="text-decoration: underline; position: relative;"><span>x<sub>2</sub></span><span style="position: absolute; top: -0.5em; right: -0.5em;">&#8594;</span></span>,
+        <span style="text-decoration: underline; position: relative;"><span>x<sub>3</sub></span><span style="position: absolute; top: -0.5em; right: -0.5em;">&#8594;</span></span>,
+        ......,
+        <span style="text-decoration: underline; position: relative;"><span>x<sub>T</sub></span><span style="position: absolute; top: -0.5em; right: -0.5em;">&#8594;</span></span>}
+        </p> 
+    <p class="mb-5 leading-relaxed text-left" style="margin-left: 20px;"
+    p(y-x) = 1/z(x) &#928; sub>T t=1</sub> exp{ &#931;<sub>k=1</sub><sup>k</sup> w<sub>k</sub>f<sub>k</sub>(y<sub>t</sub>,y<sub>t-1</sub>,x<sub>t</sub>)}</p>
+    
+    <p class="mb-5 leading-relaxed text-left" style="margin-left: 20px;">3. &nbsp;The NER approach based on deep learning is more precise than previous methods as it can group together words effectively. This is because it employs a technique called word embedding, which can comprehend the meaning and structure of words in relation to one another. Additionally, it has the ability to learn and examine both subject-specific and high-level words automatically. As a result, deep learning NER is useful for performing multiple tasks. It can also perform most of the repetitive tasks autonomously, freeing up researchers' time to use more productively.</p> 
+    
+    
+    <p class="mb-10 leading-relaxed text-left" style="margin-left: 20px;"></p>
+
+    <p class="mb-5 leading-relaxed text-left" style="margin-left: 20px;"><b>Requirements</b></p> 
+    <pre>
+         ! pip install spacy
+         ! pip install nltk
+
+         nltk.download(['stopwords','wordnet'])
+         nltk.download('omw-1.4')
+
+    <p class="mb-0 leading-relaxed text-left" style="margin-left: 20px;">For the examples:</p>     
+         ! python -m spacy download en_core_web_sm    
+         ! python -m spacy download en_core_web_lg  
+        
+        
+    </pre>
+          
+  </section>
+
+<button class="inline-flex text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg"><a href ="https://github.com/AmritaNeogi/AmritaNeogi.github.io/blob/main/NER/">Code</a></button>  
+</html>
