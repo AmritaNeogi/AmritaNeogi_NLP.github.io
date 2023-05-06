@@ -155,9 +155,10 @@
 
      <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px;"><b>Job Distribution </b></p>
      <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px;">Our random 200 samples contain a variety of job categories. Accountants, Business development, and Advocates are the top categories.</p>
-     <img src="https://raw.githubusercontent.com/john/my-website/main/images/my-image.jpg">
+     <img src="https://github.com/AmritaNeogi/AmritaNeogi.github.io/blob/main/NER/newplot.png?raw=true">
+     <!-- <img src="https://github.com/your-username/your-repository/blob/master/path/to/your/image.jpg?raw=true" alt="Description of the image"> -->
      <!-- newplot -->
-     <img src="https://raw.githubusercontent.com/john/my-website/main/images/my-image.jpg">
+     <img src="https://github.com/AmritaNeogi/AmritaNeogi.github.io/blob/main/NER/newplot2.png?raw=true">
      <!-- newplot2 -->
      <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px;">As we can observe CONSTRUCTION job category's skills distributions.<br>
       Therefore, the top Skills required for CONSTRUCTION job are: <br>
@@ -186,13 +187,13 @@
       <pre><code class="python">
         displacy.render(sent[0:10], style="dep", jupyter=True, options={"distance": 90})
       </code></pre>
-      <img src="https://raw.githubusercontent.com/john/my-website/main/images/my-image.jpg">
+      <img src="https://github.com/AmritaNeogi/AmritaNeogi.github.io/blob/main/NER/DepParsing.png?raw=true">
       <!-- DepParsing -->
     </p>
 
 
      <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px;"><b>Custom Entity Recognition</b></p>
-     <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px;">We finally customize entity recognition. We added a new entity called 'SKILL'. We will will also add custom colours to all categories and gradient colors to SKILL and Job-Category.
+     <p class="mb-10 leading-relaxed text-left" style="margin-left: 20px;">We finally customize entity recognition. We added a new entity called 'SKILL'. We will will also add custom colours to all categories and gradient colors to SKILL and Job-Category.
       <pre><code class="python">
         patterns = df.Category.unique()
         for a in patterns:
@@ -226,12 +227,11 @@
           displacy.render(sent, style="ent", jupyter=True, options=options)
               
       </code></pre>   
-      <img src="https://raw.githubusercontent.com/john/my-website/main/images/my-image.jpg">
+      <img src="https://github.com/AmritaNeogi/AmritaNeogi.github.io/blob/main/NER/CustomEntity.png?raw=true">
       <!-- CustomEntity-->
      </p>
-     
-
-
+     <br>
+     <br>
      <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px;"><b>Resume Analysis</b></p>
      <p class="mb-5 leading-relaxed text-left" style="margin-left: 20px;">
       We can finally allow users to copy paste their resumes and see their results. <br>
@@ -241,7 +241,7 @@
           input_resume= resume.txt
           sent2 = nlp(input_resume)
           displacy.render(sent2, style="ent", jupyter=True, options=options)
-          <img src="https://raw.githubusercontent.com/john/my-website/main/images/my-image.jpg">
+          <img src="https://github.com/AmritaNeogi/AmritaNeogi.github.io/blob/main/NER/resAnalysis.png?raw=true">
           <!-- resAnalysis-->
          </p>  
       </code></pre>
@@ -252,7 +252,7 @@
   <section>
     <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px; font-size: 20px;"><b>CONCLUSION</b></p>
     
-    <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px; font-size: 20px;">In this tutorial, we have learnt how to use entity ruler to create additional entities and then displayed them using custom colors. 
+    <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px;">In this tutorial, we have learnt how to use entity ruler to create additional entities and then displayed them using custom colors. 
       We have also visualized categories and skills distributions and allowed the user to add resumes directly which includes skills match percentage. <br>
       I hope you had a good learning experience.<br>
     </p>
@@ -261,11 +261,11 @@
   <section>
     <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px; font-size: 15px;"><b>References:</b></p>
     
-    <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px; font-size: 20px;">
+    <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px;">
       <a href="https://link.springer.com/chapter/10.1007/978-3-642-45358-8_7">Named Entity Recognition</a><br>
       <a href="https://github.com/laxmimerit/CV-Parsing-using-Spacy-3">Resume-and-CV-Summarization-and-Parsing-with-Spacy-in-Python</a><br>
       <a href="https://deepnote.com/@isaac-aderogba/Spacy-Food-Entities-2cc2d19c-c3ac-4321-8853-0bcf2ef565b3">Spacy Food Entities (deepnote.com)</a><br>
-      <a href="https://deepnote.com/@abid/spaCy-Resume-Analysis-81ba1e4b-7fa8-45fe-ac7a-0b7bf3da7826">Resume_Analysis</a><br>
+      <!-- <a href="https://deepnote.com/@abid/spaCy-Resume-Analysis-81ba1e4b-7fa8-45fe-ac7a-0b7bf3da7826">Resume_Analysis</a><br> -->
       <a href="https://www.cfilt.iitb.ac.in/resources/surveys/rahul-ner-survey.pdf">Named Entity Recognition: A Literature Survey</a><br>
     </p>
   </section>

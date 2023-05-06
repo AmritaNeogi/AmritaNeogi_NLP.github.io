@@ -116,13 +116,14 @@
 
     <p class="mb-5 leading-relaxed text-left" style="margin-left: 20px;"><b>Methods of NER</b></p> 
     <p class="mb-5 leading-relaxed text-left" style="margin-left: 20px;">1.&nbsp; A potential approach is to utilize various machine learning algorithms to train the model for multi-classification. However, this method necessitates extensive labelling efforts. Furthermore, due to the ambiguity present in sentences, the model must possess a profound contextual comprehension to tackle this issue. This, in turn, makes it an arduous task for a basic machine learning algorithm.<br></p> 
-    <p class="mb-5 leading-relaxed text-left" style="margin-left: 20px;">2. &nbsp;An alternative method is to utilize Conditional Random Field (CRF) implemented by NLP Speech Tagger and NLTK. This is a probabilistic model that is effective in modeling sequential data such as words. CRF is able to capture a profound understanding of the sentence's context. In this model, the input <br></p>
+    <p class="mb-5 leading-relaxed text-left" style="margin-left: 20px;">2. &nbsp;An alternative method is to utilize Conditional Random Field (CRF) implemented by NLP Speech Tagger and NLTK. This is a probabilistic model that is effective in modeling sequential data such as words. CRF is able to capture a profound understanding of the sentence's context. In this model, the input is: <br></p>
     <p class="mb-5 leading-relaxed text-left" style="margin-left: 20px;">X = {<span style="text-decoration: underline; position: relative;"><span>x<sub>1</sub></span><span style="position: absolute; top: -0.5em; right: -0.5em;">&#8594;</span></span>,
         <span style="text-decoration: underline; position: relative;"><span>x<sub>2</sub></span><span style="position: absolute; top: -0.5em; right: -0.5em;">&#8594;</span></span>,
         <span style="text-decoration: underline; position: relative;"><span>x<sub>3</sub></span><span style="position: absolute; top: -0.5em; right: -0.5em;">&#8594;</span></span>,
         ......,
         <span style="text-decoration: underline; position: relative;"><span>x<sub>T</sub></span><span style="position: absolute; top: -0.5em; right: -0.5em;">&#8594;</span></span>}
-        </p> 
+       <br><br> P(y|x) = (1/Z(x)) * exp{∑i=1n ∑j=1k θj * fj(yi, yi-1, xi)}    
+    </p> 
     <!-- <p class="mb-5 leading-relaxed text-left" style="margin-left: 20px;"
     p(y-x) = 1/z(x) &#928; sub>T t=1</sub> exp{ &#931;<sub>k=1</sub><sup>k</sup> w<sub>k</sub>f<sub>k</sub>(y<sub>t</sub>,y<sub>t-1</sub>,x<sub>t</sub>)}</p>
      -->
