@@ -4,6 +4,13 @@ This is a comprehensive tutorial on how to perform Named Entity Recognition (NER
 For the tutorial, please refer to the [website](https://amritaneogi.github.io/)
 
 
+Execution
+
+To excute the code you clone the repository:
+git clone <repository_url>
+or
+git clone https://github.com/username/repository-name.git
+
 Dataset
 
 livecareer.com resume Dataset
@@ -16,7 +23,7 @@ Category : Category of the job the resume was used to apply.
 Present categories
 HR, Designer, Information-Technology, Teacher, Advocate, Business-Development, Healthcare, Fitness, Agriculture, BPO, Sales, Consultant, Digital-Media, Automobile, Chef, Finance, Apparel, Engineering, Accountant, Construction, Public-Relations, Banking, Arts, Aviation
 
-Acknowledgements!
+Acknowledgements!!
 
 Data was obtained by scrapping individual resume examples from www.livecareer.com website. 
 Web Scrapping code is taken from [GitHub Repo](https://github.com/Sbhawal/resumeScraper).
