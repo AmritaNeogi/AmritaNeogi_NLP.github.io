@@ -7,6 +7,6 @@ RUN git clone https://github.com/AmritaNeogi/AmritaNeogi.github.io.git
 
 WORKDIR /AmritaNeogi.github.io/NER
 
-RUN pip install pandas numpy spacy nltk plotly matplotlib 
+RUN pip install pandas io json numpy spacy nltk plotly matplotlib 
 
 CMD ["python", "Resume_Screening.py"]
