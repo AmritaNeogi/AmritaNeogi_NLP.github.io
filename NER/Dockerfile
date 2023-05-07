@@ -9,4 +9,4 @@ WORKDIR /AmritaNeogi.github.io/NER
 
 RUN pip install pandas numpy spacy nltk plotly matplotlib 
 
-CMD ["python", "Requirements.py"]
+CMD ["python", "Resume_Screening.py"]
