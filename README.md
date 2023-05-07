@@ -6,7 +6,8 @@ For the tutorial, please refer to the [website](https://amritaneogi.github.io/)
 
 Execution
 
-To excute the code you clone the repository:
+You can excute the code by clonning the repository using the following commands:
+
 git clone <repository_url>
 or
 git clone https://github.com/username/repository-name.git
