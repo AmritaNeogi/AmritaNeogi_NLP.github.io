@@ -1,0 +1,16 @@
+# Data loading/ Data manipulation
+pandas==1.2.4
+numpy==1.19.3
+spacy==3.2.1
+nltk==3.6.2
+
+# spacy
+spacy-lang-en==3.2.0
+spacy-lookups-data==1.0.0
+
+# visualize
+plotly==5.3.1
+matplotlib==3.4.3
+
+# Ignore all warnings
+pywarnings==0.1.0
