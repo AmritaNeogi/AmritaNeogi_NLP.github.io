@@ -45,7 +45,7 @@ warnings.filterwarnings("ignore")
 # In[2]:
 
 
-df = pd.read_csv("https://github.com/AmritaNeogi/AmritaNeogi.github.io/blob/main/NER/Resume.csv?raw=true")
+df = pd.read_csv("https://github.com/AmritaNeogi/AmritaNeogi.github.io/blob/main/NER/Resume/Resume.csv")
 df = df.reindex(np.random.permutation(df.index))
 data = df.copy().iloc[
     0:200,
@@ -59,7 +59,7 @@ data.head()
 
 
 nlp = spacy.load("en_core_web_lg")
-skill_pattern_path = "https://github.com/AmritaNeogi/AmritaNeogi.github.io/blob/main/jz_skill_patterns.jsonl?raw=true"
+skill_pattern_path = "https://github.com/AmritaNeogi/AmritaNeogi.github.io/blob/main/jz_skill_patterns.jsonl"
 
 # # Entity Ruler
 
