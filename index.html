@@ -232,20 +232,42 @@
      </p>
      <br>
      <br>
-     <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px;"><b>Resume Analysis</b></p>
+     <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px;"><b>Resume Evaluation</b></p>
      <p class="mb-5 leading-relaxed text-left" style="margin-left: 20px;">
-      We can finally allow users to copy paste their resumes and see their results. <br>
-      We are using a random resume here in text format and our model successfully highlights all the skills.
+      We can finally allow users to give their resumes and see asses how appropriate it is for a particular job or role. <br>
+      We are using a sample resume here in text format to demonstrate this. Our model successfully highlights all the skills.
       <pre><code class="python">  
         # taking example of a random resume 
           input_resume= resume.txt
           sent2 = nlp(input_resume)
           displacy.render(sent2, style="ent", jupyter=True, options=options)
+          <br>
+        </code></pre>
           <img src="https://github.com/AmritaNeogi/AmritaNeogi.github.io/blob/main/NER/images/resAnalysis.png?raw=true">
           <!-- resAnalysis-->
-         </p>  
+      
+        <code><pre>
+          # ACCURACY
+
+          input_skills = "Database, SQL, Machine Learning" # example of input skills
+          req_skills = input_skills.lower().split(",")
+          resume_skills = unique_skills(get_skills(input_resume.lower()))
+          score = 0
+          for x in req_skills:
+              if x in resume_skills:
+                  score += 1
+          req_skills_len = len(req_skills)
+          match = round(score / req_skills_len * 100, 1)
+
+          print(f"The current Resume is {match}% matched to your requirements")
       </code></pre>
-      <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px;">With this model, you can determine the degree to which it aligns with job requirements and obtain an accuracy score.</p>
+          
+          <img src="https://github.com/AmritaNeogi/AmritaNeogi.github.io/blob/main/NER/images/Accuracy.png?raw=true">
+          <!-- Accuracy.png -->
+         </p>  
+      
+      <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px;">Thus, with this model, you can determine the degree to which it aligns with job requirements and obtain an accuracy score.</p>
+      
   </section>
 
 
