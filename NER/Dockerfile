@@ -1,10 +1,12 @@
 # Dockerfile, Image, Container
 FROM python:3.11.3
 
-ADD Resume_Screening.ipynb .
+RUN apt-get update && apt-get install -y git
 
-RUN pip install pandas numpy spacy nltk plotly matplotlib 
+RUN git clone https://github.com/AmritaNeogi/AmritaNeogi.github.io.git
 
-CMD ["python", "Resume_Screening.ipynb"]
+WORKDIR /AmritaNeogi.github.io/NER
 
+RUN pip install pandas io json numpy spacy nltk plotly matplotlib 
 
+CMD ["python", "Resume_Screening.py"]
