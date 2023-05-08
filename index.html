@@ -56,6 +56,48 @@
     <p class="mb-0 leading-relaxed text-left" style="margin-left: 20px;">In this tutorial, we will explore the use of spacy for entity recognition in analyzing 200 resumes and experiment with various NLP tools for text analysis. Our primary objective is to assist recruiters in quickly reviewing a large number of applications. We have also included a skill matching feature to help hiring managers evaluate whether candidates should proceed to the interview stage. To achieve this, we will use two datasets: one with resume texts and the other containing skills to create an entity ruler. By the end of this tutorial, you'll have gained practical experience in using spacy for entity recognition and employing NLP tools for text analysis.<br> <br></p>
 </section>
 
+<section>
+  <!-- <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px;"><b> What is spaCy?</b></p> -->
+  <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px; font-size: 20px;"><b>RQUIREMENTS</b></p>
+  <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px; font-size: 20px;">You need to have the following pacakges and libraries available:<br>
+    # Data loading/ Data manipulation <br>
+    pandas==1.2.4 <br>
+    numpy==1.19.3 <br>
+    spacy==3.2.1 <br>
+    nltk==3.6.2<br>
+    
+    # spacy <br>
+    spacy-lang-en==3.2.0<br>
+    spacy-lookups-data==1.0.0<br>
+    
+    # visualize<br>
+    plotly==5.3.1<br>
+    matplotlib==3.4.3<br>
+
+    To load the spaCy models you can run the following commands:
+    <pre>
+      !python -m spacy download en_core_web_sm
+
+      import spacy
+      nlp = spacy.load('en_core_web_sm')
+     
+ </pre>
+  </p>
+    <!-- <p class="mb-0 leading-relaxed text-left" style="margin-left: 20px;">You can follow this tutorial with our git repository that contains a docker image with all spaCy requirements. 
+      Make sure you have <b>docker</b> installed on your machine<br> <br>
+    1. Clone this <a href="https://github.com/AmritaNeogi/AmritaNeogi.github.io">repository</a> <br>
+    2. On the terminal, navigate to the root of the cloned directory, and run the following command:<br>
+
+    <pre><code>
+      docker run -it  -v "$PWD:/app/" lhh7/wordkit-tutorial
+    </code></pre> -->
+    
+    
+    </p>
+
+
+</section>
+
 
 <section>    
     <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px; font-size: 20px;"><b>APPROACH</b></p>
@@ -113,7 +155,7 @@
       <p class="mb-2 leading-relaxed text-left" style="margin-left: 20px;">Next step is Resume data cleaning and processing. For this we need the following NLTK (Natural Language Toolkit) resources:<br></p>
       <pre><code class="python">
             nltk.download(['stopwords','wordnet'])
-            nltk.download('omw-1.4')      
+            _ = nltk.download('omw-1.4')      
    
         </code></pre>
       <p class="mb-8 leading-relaxed text-left" style="margin-left: 20px;"><b>stopwords</b>: This resource contains a list of common stop words (words that are frequently occurring and do not carry any meaning, e.g. "the", "and", "is", "a") that are used to remove noise from text data during text preprocessing.<br>
@@ -164,8 +206,7 @@
       Therefore, the top Skills required for BUSINESS-DEVELOPMENT job are: <br>
       Business<br>
       Software<br>
-      Support <br> 
-      Marketing <br>    
+      Support <br>         
       So, anybody looking to improve their chance of getting hired as a business developer should focus on the above mentioned skills.</p>
 
 
